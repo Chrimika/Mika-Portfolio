@@ -277,14 +277,14 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center w-full">
               <div 
                 className="relative"
                 style={{
                   transform: `translateY(${scrollY * 0.05}px)`
                 }}
               >
-                <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                <div className="w-60 h-60 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl mx-auto">
                   <img
                     src="/assets/images/Mika.jpg"
                     alt="Mika MBA"
@@ -332,11 +332,11 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 w-full">
               {t.aboutSkills.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow"
+                  className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow w-full min-w-0"
                 >
                   <div className="bg-blue-100 p-3 rounded-lg">
                     <item.icon className="w-6 h-6 text-blue-600" />
