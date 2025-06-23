@@ -16,6 +16,7 @@ interface Project {
 const Portfolio: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
+  const [language, setLanguage] = useState<'fr' | 'en'>('en');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,20 +51,20 @@ const Portfolio: React.FC = () => {
     },
     {
       id: 2,
-      title: "Fitness Tracker",
-      description: "App de suivi fitness avec géolocalisation et statistiques détaillées",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-      technologies: ["Flutter", "Dart", "SQLite"],
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "Kamer Otaku Festival",
+      description: "App de présentation de l'événement otaku le plus chaud au Cameroun",
+      image: "/assets/images/Kof.png",
+      technologies: ["Next JS", "TypeScript", "Tailwind CSS"],
+      demoUrl: "https://kof-web.vercel.app/",
+      githubUrl: "https://github.com/Chrimika/KOF_WEB"
     },
     {
       id: 3,
-      title: "Chat Application",
-      description: "Application de messagerie temps réel avec appels vidéo intégrés",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-      technologies: ["React Native", "Socket.io", "WebRTC"],
-      demoUrl: "#",
+      title: "Care Application",
+      description: "Application de prise de rendez-vous médicaux avec chat en temps réel, avec maps integrées",
+      image: "/assets/images/PiolCare.png",
+      technologies: ["React Native", "Firebase", "MapBox"],
+      demoUrl: "https://play.google.com/store/apps/details?id=com.wizeman.piolcare",
       githubUrl: "#"
     }
   ];
@@ -73,6 +74,76 @@ const Portfolio: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const translations = {
+    en: {
+      heroIntro: "my name is Mika MBA and I am a freelance",
+      heroTitle1: "Mobile",
+      heroTitle2: "Developer",
+      heroSubtitle: "& App Designer",
+      heroLocation: "based in Yaoundé, Cameroon.",
+      heroBtnDev: "You need a developer",
+      heroBtnDesign: "You need a designer",
+      aboutTitle: "About Me",
+      aboutP1: "Passionate mobile developer with over 5 years of experience creating beautiful and functional applications that users love.",
+      aboutP2: "I specialize in React Native and Flutter development, focusing on creating seamless user experiences across iOS and Android platforms.",
+      aboutP3: "When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or mentoring aspiring developers.",
+      aboutSkills: [
+        { icon: Smartphone, title: "Mobile Development", desc: "Native & Cross-platform apps" },
+        { icon: Code, title: "Clean Code", desc: "Scalable and maintainable solutions" },
+        { icon: Palette, title: "UI/UX Design", desc: "Beautiful and intuitive interfaces" }
+      ],
+      projectsTitle: "Recent Projects",
+      projectsDesc: "Here are some of my recent mobile applications that showcase my skills and passion for creating exceptional user experiences.",
+      demo: "Demo",
+      code: "Code",
+      footerTitle: "Ready to work together?",
+      footerDesc: "Let's create something amazing together. Get in touch!",
+      footerBtn: "Get In Touch",
+      whatsapp: "WhatsApp"
+    },
+    fr: {
+      heroIntro: "je m'appelle Mika MBA et je suis freelance",
+      heroTitle1: "Développeur",
+      heroTitle2: "Mobile",
+      heroSubtitle: "& Designer d'applications",
+      heroLocation: "basé à Yaoundé, Cameroun.",
+      heroBtnDev: "Vous avez besoin d'un développeur",
+      heroBtnDesign: "Vous avez besoin d'un designer",
+      aboutTitle: "À propos de moi",
+      aboutP1: "Développeur mobile passionné avec plus de 5 ans d'expérience dans la création d'applications belles et fonctionnelles appréciées des utilisateurs.",
+      aboutP2: "Je suis spécialisé en développement React Native et Flutter, avec un focus sur l'expérience utilisateur fluide sur iOS et Android.",
+      aboutP3: "Quand je ne code pas, je découvre de nouvelles technologies, contribue à l'open source ou mentor des développeurs en herbe.",
+      aboutSkills: [
+        { icon: Smartphone, title: "Développement Mobile", desc: "Apps natives & multiplateformes" },
+        { icon: Code, title: "Code Propre", desc: "Solutions scalables et maintenables" },
+        { icon: Palette, title: "UI/UX Design", desc: "Interfaces belles et intuitives" }
+      ],
+      projectsTitle: "Projets récents",
+      projectsDesc: "Voici quelques-unes de mes applications mobiles récentes qui illustrent mes compétences et ma passion pour l'expérience utilisateur.",
+      demo: "Démo",
+      code: "Code",
+      footerTitle: "Prêt à collaborer ?",
+      footerDesc: "Créons quelque chose d'incroyable ensemble. Contactez-moi !",
+      footerBtn: "Me contacter",
+      whatsapp: "WhatsApp"
+    }
+  };
+
+  const t = translations[language];
+
+  const navLabels = {
+    en: [
+      { label: 'Home', id: 'home' },
+      { label: 'About', id: 'about' },
+      { label: 'Projects', id: 'projects' }
+    ],
+    fr: [
+      { label: 'Accueil', id: 'home' },
+      { label: 'À propos', id: 'about' },
+      { label: 'Projets', id: 'projects' }
+    ]
   };
 
   return (
@@ -120,28 +191,40 @@ const Portfolio: React.FC = () => {
             </div>
             
             <nav className="flex items-center space-x-8">
-              {['Design', 'Photos', 'About'].map((item) => (
+              {navLabels[language].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`text-gray-600 hover:text-gray-900 transition-colors${activeSection === item.id ? ' font-bold underline' : ''}`}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(item.toLowerCase());
+                    scrollToSection(item.id);
                   }}
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
               <div className="flex items-center space-x-2 text-sm">
-                <span className="text-gray-400">FR</span>
-                <span className="text-gray-900 font-medium">EN</span>
+                <button
+                  className={`transition-colors cursor-pointer ${language === 'fr' ? 'text-gray-900 font-medium' : 'text-gray-400'}`}
+                  onClick={() => setLanguage('fr')}
+                  aria-label="Français"
+                >
+                  FR
+                </button>
+                <button
+                  className={`transition-colors cursor-pointer ${language === 'en' ? 'text-gray-900 font-medium' : 'text-gray-400'}`}
+                  onClick={() => setLanguage('en')}
+                  aria-label="English"
+                >
+                  EN
+                </button>
               </div>
               <a
-                href="mailto:hello@mika.dev"
+                href="mailto:mbachristian58@gmail.com"
                 className="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors"
               >
-                hello@mika.dev
+                mbachristian58@gmail.com
               </a>
             </nav>
           </div>
@@ -161,21 +244,21 @@ const Portfolio: React.FC = () => {
             >
               <div className="flex items-center space-x-2 text-lg text-gray-600">
                 <span className="text-2xl animate-wave">👋</span>
-                <span>my name is Mika MBA and I am a freelance</span>
+                <span>{t.heroIntro}</span>
               </div>
               
               <h1 className="text-6xl lg:text-8xl font-black text-gray-900 leading-none">
-                Mobile
+                {t.heroTitle1}
                 <br />
-                Developer
+                {t.heroTitle2}
               </h1>
               
               <h2 className="text-4xl lg:text-6xl font-light text-gray-500 leading-none">
-                & App Designer
+                {t.heroSubtitle}
               </h2>
               
               <p className="text-lg text-gray-600 max-w-md">
-                based in Yaoundé, Cameroon.
+                {t.heroLocation}
               </p>
               
               <div className="flex flex-wrap gap-4 pt-6">
@@ -183,13 +266,13 @@ const Portfolio: React.FC = () => {
                   onClick={() => scrollToSection('projects')}
                   className="bg-gray-900 text-white px-8 py-4 rounded-md hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 >
-                  You need a developer
+                  {t.heroBtnDev}
                 </button>
                 <button
                   onClick={() => scrollToSection('about')}
                   className="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-md hover:bg-gray-900 hover:text-white transition-all duration-300"
                 >
-                  You need a designer
+                  {t.heroBtnDesign}
                 </button>
               </div>
             </div>
@@ -234,30 +317,23 @@ const Portfolio: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
-                About Me
+                {t.aboutTitle}
               </h2>
               <div className="space-y-6 text-lg text-gray-600">
                 <p>
-                  Passionate mobile developer with over 5 years of experience creating 
-                  beautiful and functional applications that users love.
+                  {t.aboutP1}
                 </p>
                 <p>
-                  I specialize in React Native and Flutter development, focusing on 
-                  creating seamless user experiences across iOS and Android platforms.
+                  {t.aboutP2}
                 </p>
                 <p>
-                  When I'm not coding, you'll find me exploring new technologies, 
-                  contributing to open source projects, or mentoring aspiring developers.
+                  {t.aboutP3}
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 gap-8">
-              {[
-                { icon: Smartphone, title: "Mobile Development", desc: "Native & Cross-platform apps" },
-                { icon: Code, title: "Clean Code", desc: "Scalable and maintainable solutions" },
-                { icon: Palette, title: "UI/UX Design", desc: "Beautiful and intuitive interfaces" }
-              ].map((item, index) => (
+              {t.aboutSkills.map((item, index) => (
                 <div 
                   key={index}
                   className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow"
@@ -281,11 +357,10 @@ const Portfolio: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-              Recent Projects
+              {t.projectsTitle}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Here are some of my recent mobile applications that showcase my skills
-              and passion for creating exceptional user experiences.
+              {t.projectsDesc}
             </p>
           </div>
 
@@ -333,7 +408,7 @@ const Portfolio: React.FC = () => {
                           className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          <span className="text-sm">Demo</span>
+                          <span className="text-sm">{t.demo}</span>
                         </a>
                       )}
                       {project.githubUrl && (
@@ -342,7 +417,7 @@ const Portfolio: React.FC = () => {
                           className="flex items-center space-x-1 text-gray-600 hover:text-gray-800 transition-colors"
                         >
                           <Github className="w-4 h-4" />
-                          <span className="text-sm">Code</span>
+                          <span className="text-sm">{t.code}</span>
                         </a>
                       )}
                     </div>
@@ -357,16 +432,36 @@ const Portfolio: React.FC = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to work together?</h3>
+          <h3 className="text-2xl font-bold mb-4">
+            {t.footerTitle}
+          </h3>
           <p className="text-gray-400 mb-6">
-            Let's create something amazing together. Get in touch!
+            {t.footerDesc}
           </p>
-          <a
-            href="mailto:hello@mika.dev"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Get In Touch
-          </a>
+          <div className="flex justify-center gap-4">
+            <a
+              href="mailto:mbachristian58@gmail.com"
+              className="inline-flex items-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-white px-8 py-3 rounded-md hover:from-blue-700 hover:to-pink-600 transition-colors font-semibold shadow-lg"
+            >
+              {t.footerBtn}
+            </a>
+            <a
+              href="https://wa.me/237672094167"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md transition-colors font-semibold shadow-lg"
+              aria-label="WhatsApp"
+            >
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.007-.372-.009-.571-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.71.306 1.263.489 1.695.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 6.318h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.455 4.436-9.89 9.893-9.89 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.896 6.994c-.003 5.455-4.438 9.89-9.893 9.89zm8.413-18.303A11.815 11.815 0 0012.05 0C5.495 0 .06 5.435.058 12.086c0 2.13.557 4.213 1.615 6.044L0 24l6.064-1.594a11.88 11.88 0 005.978 1.527h.005c6.554 0 11.89-5.435 11.893-12.086a11.82 11.82 0 00-3.495-8.626z" />
+              </svg>
+              {t.whatsapp}
+            </a>
+          </div>
         </div>
       </footer>
 
