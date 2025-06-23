@@ -41,11 +41,11 @@ const Portfolio: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Mobile App",
-      description: "Application mobile complète avec paiement intégré et gestion des commandes",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      title: "Papers - Livres et Histoires",
+      description: "Application mobile complète avec paiement intégré et gestion auteurs - livres",
+      image: "/assets/images/Papers.jpg",
       technologies: ["React Native", "TypeScript", "Firebase"],
-      demoUrl: "#",
+      demoUrl: "https://play.google.com/store/apps/details?id=com.seedsoftengine.papers",
       githubUrl: "#"
     },
     {
