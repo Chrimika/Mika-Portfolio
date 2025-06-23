@@ -147,9 +147,9 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gray-50 text-gray-900 w-full overflow-x-hidden">
       {/* Animated Background Bubbles */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none w-full">
         <div 
           className="absolute w-64 h-64 bg-blue-200 rounded-full opacity-20 animate-bounce"
           style={{
@@ -184,7 +184,7 @@ const Portfolio: React.FC = () => {
 
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 w-full">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-black text-gray-900">
               Mika<span className="text-blue-600">.</span>
@@ -232,8 +232,8 @@ const Portfolio: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 min-h-screen flex items-center">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="home" className="pt-24 pb-16 min-h-screen flex items-center w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div 
               className="space-y-6"
@@ -312,8 +312,8 @@ const Portfolio: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="about" className="py-20 bg-white w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
@@ -332,7 +332,7 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {t.aboutSkills.map((item, index) => (
                 <div 
                   key={index}
@@ -353,8 +353,8 @@ const Portfolio: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="projects" className="py-20 bg-gray-50 w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
               {t.projectsTitle}
@@ -430,8 +430,8 @@ const Portfolio: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <footer className="bg-gray-900 text-white py-12 w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center w-full">
           <h3 className="text-2xl font-bold mb-4">
             {t.footerTitle}
           </h3>
