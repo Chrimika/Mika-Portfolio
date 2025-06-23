@@ -44,7 +44,7 @@ const Portfolio: React.FC = () => {
       id: 1,
       title: "Papers - Livres et Histoires",
       description: "Application mobile complète avec paiement intégré et gestion auteurs - livres",
-      image: "/assets/images/Papers.jpg",
+      image: "/assets/images/Papers.png",
       technologies: ["React Native", "TypeScript", "Firebase"],
       demoUrl: "https://play.google.com/store/apps/details?id=com.seedsoftengine.papers",
       githubUrl: "#"
