@@ -332,7 +332,7 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               {t.aboutSkills.map((item, index) => (
                 <div 
                   key={index}
@@ -464,6 +464,20 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating CV Download Button */}
+      <a
+        href="/MikaMBA_Resume.pdf"
+        download
+        className="fixed bottom-6 right-6 z-50 bg-white/90 border border-gray-300 rounded-full shadow-lg p-3 flex items-center gap-2 text-gray-700 hover:bg-blue-600 hover:text-white transition-colors text-sm backdrop-blur-md"
+        aria-label="Télécharger mon CV"
+        title="Télécharger mon CV"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4m-8 8h8" />
+        </svg>
+        Télécharger mon   CV
+      </a>
 
       <style jsx>{`
         @keyframes wave {
