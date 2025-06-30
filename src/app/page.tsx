@@ -66,7 +66,17 @@ const Portfolio: React.FC = () => {
       technologies: ["React Native", "Firebase", "MapBox"],
       demoUrl: "https://play.google.com/store/apps/details?id=com.wizeman.piolcare",
       githubUrl: "#"
+    },
+    {
+      id: 4,
+      title: "Qr pay - Paiement QR",
+      description: "Une solution SAAS pour les retraits d'argent OM et MOMO extremement long - ici, on retire en scannant",
+      image: "/assets/images/Qr.png",
+      technologies: ["Next JS", "TypeScript", "Tailwind CSS"],
+      demoUrl: "https://kof-web-git-scanproduction-chrimikas-projects.vercel.app/",
+      githubUrl: "#"
     }
+
   ];
 
   const scrollToSection = (sectionId: string) => {
