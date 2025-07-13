@@ -114,21 +114,21 @@ const Portfolio: React.FC = () => {
       whatsapp: "WhatsApp"
     },
     fr: {
-      heroIntro: "je m'appelle Mika MBA et je suis freelance",
-      heroTitle1: "Développeur",
-      heroTitle2: "Mobile",
-      heroSubtitle: "& Designer d'applications",
+      heroIntro: "je m'appelle Toukem Maguy et je suis freelance",
+      heroTitle1: "Designeur",
+      heroTitle2: "UI/UX",
+      heroSubtitle: "& Graphique",
       heroLocation: "basé à Yaoundé, Cameroun.",
       heroBtnDev: "Vous avez besoin d'un développeur",
       heroBtnDesign: "Vous avez besoin d'un designer",
       aboutTitle: "À propos de moi",
-      aboutP1: "Développeur mobile passionné avec plus de 5 ans d'expérience dans la création d'applications belles et fonctionnelles appréciées des utilisateurs.",
-      aboutP2: "Je suis spécialisé en développement React Native et Flutter, avec un focus sur l'expérience utilisateur fluide sur iOS et Android.",
-      aboutP3: "Quand je ne code pas, je découvre de nouvelles technologies, contribue à l'open source ou mentor des développeurs en herbe.",
+      aboutP1: "🎨 Designer UI/UX & Graphique passionnée, je conçois des interfaces élégantes, intuitives et centrées sur l’utilisateur, avec une approche à la fois créative et fonctionnelle.",
+      aboutP2: "💼 Grâce à Figma, mon outil de prédilection, je réalise des maquettes modernes, des prototypes interactifs et des parcours utilisateurs cohérents, que ce soit pour des applications mobiles, des plateformes web ou des systèmes de design.",
+      aboutP3: "📱 Je suis spécialisée dans la création d’interfaces mobiles (iOS & Android), tout en ayant un œil affuté pour le design graphique : identités visuelles, affiches, flyers, chartes graphiques et plus encore. Mon objectif : créer des expériences visuelles mémorables qui répondent aux besoins réels des utilisateurs.",
       aboutSkills: [
-        { icon: Smartphone, title: "Développement Mobile", desc: "Apps natives & multiplateformes" },
-        { icon: Code, title: "Code Propre", desc: "Solutions scalables et maintenables" },
-        { icon: Palette, title: "UI/UX Design", desc: "Interfaces belles et intuitives" }
+        { icon: Smartphone, title: "Designs Mobile", desc: "Interfaces intuitives et unique" },
+        { icon: Code, title: "Design web", desc: "Design d'interfaces modernes" },
+        { icon: Palette, title: "UI/UX Design", desc: "Parcours utilisateur & design thinking" }
       ],
       projectsTitle: "Projets récents",
       projectsDesc: "Voici quelques-unes de mes applications mobiles récentes qui illustrent mes compétences et ma passion pour l'expérience utilisateur.",
@@ -197,7 +197,7 @@ const Portfolio: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 w-full">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-black text-gray-900">
-              Mika<span className="text-blue-600">.</span>
+              Maguy<span className="text-blue-600">.</span>
             </div>
             
             <nav className="flex items-center space-x-8">
@@ -231,10 +231,10 @@ const Portfolio: React.FC = () => {
                 </button>
               </div>
               <a
-                href="mailto:mbachristian58@gmail.com"
+                href="mailto:toukemmaguy@gmail.com"
                 className="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors"
               >
-                mbachristian58@gmail.com
+                toukemmaguy@gmail.com
               </a>
             </nav>
           </div>
@@ -270,21 +270,6 @@ const Portfolio: React.FC = () => {
               <p className="text-lg text-gray-600 max-w-md">
                 {t.heroLocation}
               </p>
-              
-              <div className="flex flex-wrap gap-4 pt-6">
-                <button
-                  onClick={() => scrollToSection('projects')}
-                  className="bg-gray-900 text-white px-8 py-4 rounded-md hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                >
-                  {t.heroBtnDev}
-                </button>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-md hover:bg-gray-900 hover:text-white transition-all duration-300"
-                >
-                  {t.heroBtnDesign}
-                </button>
-              </div>
             </div>
 
             <div className="flex justify-center w-full">
@@ -296,7 +281,7 @@ const Portfolio: React.FC = () => {
               >
                 <div className="w-60 h-60 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl mx-auto">
                   <img
-                    src="/assets/images/Mika.jpg"
+                    src="/assets/images/Maguy.jpeg"
                     alt="Mika MBA"
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                     onError={(e) => {
@@ -450,7 +435,7 @@ const Portfolio: React.FC = () => {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="mailto:mbachristian58@gmail.com"
+              href="mailto:toukemmaguy@gmail.com"
               className="inline-flex items-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-white px-8 py-3 rounded-md hover:from-blue-700 hover:to-pink-600 transition-colors font-semibold shadow-lg"
             >
               {t.footerBtn}
