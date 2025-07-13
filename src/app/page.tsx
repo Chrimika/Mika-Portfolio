@@ -88,53 +88,53 @@ const Portfolio: React.FC = () => {
 
   const translations = {
     en: {
-      heroIntro: "my name is Mika MBA and I am a freelance",
-      heroTitle1: "Mobile",
-      heroTitle2: "Developer",
-      heroSubtitle: "& App Designer",
+      heroIntro: "My name is Toukem Maguy and I am a freelance designer",
+      heroTitle1: "UI/UX",
+      heroTitle2: "Designer",
+      heroSubtitle: "& Graphic Artist",
       heroLocation: "based in Yaoundé, Cameroon.",
-      heroBtnDev: "You need a developer",
-      heroBtnDesign: "You need a designer",
+      heroBtnDev: "You need a designer",
+      heroBtnDesign: "You need a creative mind",
       aboutTitle: "About Me",
-      aboutP1: "Passionate mobile developer with over 5 years of experience creating beautiful and functional applications that users love.",
-      aboutP2: "I specialize in React Native and Flutter development, focusing on creating seamless user experiences across iOS and Android platforms.",
-      aboutP3: "When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or mentoring aspiring developers.",
+      aboutP1: "🎨 Passionate UI/UX & Graphic Designer, I create elegant, intuitive, and user-centered interfaces with a creative and functional approach.",
+      aboutP2: "💼 Figma is my tool of choice for crafting modern mockups, interactive prototypes, and consistent user journeys for mobile apps, web platforms, and design systems.",
+      aboutP3: "📱 I specialize in mobile interfaces (iOS & Android) and have a sharp eye for graphic design: visual identities, posters, flyers, brand guidelines, and more. My goal: to create memorable visual experiences that truly meet user needs.",
       aboutSkills: [
-        { icon: Smartphone, title: "Mobile Development", desc: "Native & Cross-platform apps" },
-        { icon: Code, title: "Clean Code", desc: "Scalable and maintainable solutions" },
-        { icon: Palette, title: "UI/UX Design", desc: "Beautiful and intuitive interfaces" }
+        { icon: Smartphone, title: "Mobile Design", desc: "Unique & intuitive interfaces" },
+        { icon: Code, title: "Web Design", desc: "Modern and creative web layouts" },
+        { icon: Palette, title: "UI/UX & Graphic Design", desc: "User journeys & design thinking" }
       ],
       projectsTitle: "Recent Projects",
-      projectsDesc: "Here are some of my recent mobile applications that showcase my skills and passion for creating exceptional user experiences.",
+      projectsDesc: "Here are some of my recent design projects that showcase my skills and passion for user experience and visual creativity.",
       demo: "Demo",
-      code: "Code",
-      footerTitle: "Ready to work together?",
-      footerDesc: "Let's create something amazing together. Get in touch!",
-      footerBtn: "Get In Touch",
+      code: "Designs",
+      footerTitle: "Ready to collaborate?",
+      footerDesc: "Let's create something amazing together. Contact me!",
+      footerBtn: "Contact Me",
       whatsapp: "WhatsApp"
     },
     fr: {
-      heroIntro: "je m'appelle Toukem Maguy et je suis freelance",
-      heroTitle1: "Designeur",
+      heroIntro: "je m'appelle Toukem Maguy et je suis designeuse freelance",
+      heroTitle1: "Designeuse",
       heroTitle2: "UI/UX",
       heroSubtitle: "& Graphique",
-      heroLocation: "basé à Yaoundé, Cameroun.",
-      heroBtnDev: "Vous avez besoin d'un développeur",
-      heroBtnDesign: "Vous avez besoin d'un designer",
+      heroLocation: "basée à Yaoundé, Cameroun.",
+      heroBtnDev: "Vous avez besoin d'une designeuse",
+      heroBtnDesign: "Vous cherchez une créative",
       aboutTitle: "À propos de moi",
-      aboutP1: "🎨 Designer UI/UX & Graphique passionnée, je conçois des interfaces élégantes, intuitives et centrées sur l’utilisateur, avec une approche à la fois créative et fonctionnelle.",
-      aboutP2: "💼 Grâce à Figma, mon outil de prédilection, je réalise des maquettes modernes, des prototypes interactifs et des parcours utilisateurs cohérents, que ce soit pour des applications mobiles, des plateformes web ou des systèmes de design.",
+      aboutP1: "🎨 Designeuse UI/UX & Graphique passionnée, je conçois des interfaces élégantes, intuitives et centrées sur l’utilisateur, avec une approche créative et fonctionnelle.",
+      aboutP2: "💼 Figma est mon outil de prédilection pour réaliser des maquettes modernes, des prototypes interactifs et des parcours utilisateurs cohérents, que ce soit pour des applications mobiles, des plateformes web ou des systèmes de design.",
       aboutP3: "📱 Je suis spécialisée dans la création d’interfaces mobiles (iOS & Android), tout en ayant un œil affuté pour le design graphique : identités visuelles, affiches, flyers, chartes graphiques et plus encore. Mon objectif : créer des expériences visuelles mémorables qui répondent aux besoins réels des utilisateurs.",
       aboutSkills: [
-        { icon: Smartphone, title: "Designs Mobile", desc: "Interfaces intuitives et unique" },
-        { icon: Code, title: "Design web", desc: "Design d'interfaces modernes" },
-        { icon: Palette, title: "UI/UX Design", desc: "Parcours utilisateur & design thinking" }
+        { icon: Smartphone, title: "Design Mobile", desc: "Interfaces intuitives et uniques" },
+        { icon: Code, title: "Design web", desc: "Mises en page web modernes et créatives" },
+        { icon: Palette, title: "UI/UX & Graphique", desc: "Parcours utilisateur & design thinking" }
       ],
       projectsTitle: "Projets récents",
-      projectsDesc: "Voici quelques-unes de mes applications mobiles récentes qui illustrent mes compétences et ma passion pour l'expérience utilisateur.",
+      projectsDesc: "Voici quelques-unes de mes réalisations récentes qui illustrent mes compétences et ma passion pour l'expérience utilisateur et la créativité visuelle.",
       demo: "Démo",
-      code: "Code",
-      footerTitle: "Prêt à collaborer ?",
+      code: "Designs",
+      footerTitle: "Prête à collaborer ?",
       footerDesc: "Créons quelque chose d'incroyable ensemble. Contactez-moi !",
       footerBtn: "Me contacter",
       whatsapp: "WhatsApp"
@@ -462,7 +462,7 @@ const Portfolio: React.FC = () => {
 
       {/* Floating CV Download Button */}
       <a
-        href="/MikaMBA_Resume.pdf"
+        href="/Maguy_CV.pdf"
         download
         className="fixed bottom-6 right-6 z-50 bg-white/90 border border-gray-300 rounded-full shadow-lg p-3 flex items-center gap-2 text-gray-700 hover:bg-blue-600 hover:text-white transition-colors text-sm backdrop-blur-md"
         aria-label="Télécharger mon CV"
