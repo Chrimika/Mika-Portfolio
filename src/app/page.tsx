@@ -441,7 +441,7 @@ const Portfolio: React.FC = () => {
               {t.footerBtn}
             </a>
             <a
-              href="https://wa.me/237672094167"
+              href="https://wa.me/237659592914"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md transition-colors font-semibold shadow-lg"
