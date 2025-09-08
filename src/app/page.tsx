@@ -240,7 +240,7 @@ const Portfolio: React.FC = () => {
       {/* Hero Section */}
       <section id="home" className="pt-24 pb-16 min-h-screen flex justify-center items-center w-full">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full pb-16">
-          <div className="flex justify-between">
+          <div className="flex justify-between flex-wrap-reverse gap-16">
             <div 
               className="space-y-6 w-150"
               style={{
@@ -275,7 +275,7 @@ const Portfolio: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex justify-center w-80">
+            <div className="flex justify-center w-100 m-auto">
               <div 
                 className="relative"
                 style={{
