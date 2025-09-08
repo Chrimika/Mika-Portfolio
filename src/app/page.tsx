@@ -1,7 +1,8 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Smartphone, Code, Palette, ExternalLink, Github } from 'lucide-react';
+import { ChevronDown, Smartphone, Code, Palette, ExternalLink, Github, Linkedin } from 'lucide-react';
+import { Facebook } from 'iconsax-react'
 
 interface Project {
   id: number;
@@ -89,10 +90,10 @@ const Portfolio: React.FC = () => {
   const translations = {
     en: {
       heroIntro: "my name is Mika MBA and I am a freelance",
-      heroTitle1: "Mobile",
-      heroTitle2: "Developer",
+      heroTitle1: "Mika MBA",
+      heroTitle2: "",
       heroSubtitle: "& App Designer",
-      heroLocation: "based in Yaoundé, Cameroon.",
+      heroLocation: "Mobile Developper & UI-Designer",
       heroBtnDev: "You need a developer",
       heroBtnDesign: "You need a designer",
       aboutTitle: "About Me",
@@ -115,7 +116,7 @@ const Portfolio: React.FC = () => {
     },
     fr: {
       heroIntro: "je m'appelle Mika MBA et je suis freelance",
-      heroTitle1: "Développeur",
+      heroTitle1: "Mika MBA",
       heroTitle2: "Mobile",
       heroSubtitle: "& Designer d'applications",
       heroLocation: "basé à Yaoundé, Cameroun.",
@@ -146,13 +147,13 @@ const Portfolio: React.FC = () => {
   const navLabels = {
     en: [
       { label: 'Home', id: 'home' },
-      { label: 'About', id: 'about' },
-      { label: 'Projects', id: 'projects' }
+      { label: 'Projects', id: 'projects' },
+      { label: 'About', id: 'about' }
     ],
     fr: [
       { label: 'Accueil', id: 'home' },
-      { label: 'À propos', id: 'about' },
-      { label: 'Projets', id: 'projects' }
+      { label: 'Projets', id: 'projects' },
+      { label: 'À propos', id: 'about' }
     ]
   };
 
@@ -197,7 +198,7 @@ const Portfolio: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 w-full">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-black text-gray-900">
-              Mika<span className="text-blue-600">.</span>
+              <img src="assets/images/mika-logo-black.svg" alt="Logo" className="w-12 h-12" />
             </div>
             
             <nav className="flex items-center space-x-8">
@@ -230,86 +231,71 @@ const Portfolio: React.FC = () => {
                   EN
                 </button>
               </div>
-              <a
-                href="mailto:mbachristian58@gmail.com"
-                className="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors"
-              >
-                mbachristian58@gmail.com
-              </a>
+              
             </nav>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 min-h-screen flex items-center w-full">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section id="home" className="pt-24 pb-16 min-h-screen flex justify-center items-center w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full pb-16">
+          <div className="flex justify-between">
             <div 
-              className="space-y-6"
+              className="space-y-6 w-150"
               style={{
                 transform: `translateY(${scrollY * 0.1}px)`,
                 opacity: Math.max(0, 1 - scrollY * 0.002)
               }}
             >
-              <div className="flex items-center space-x-2 text-lg text-gray-600">
-                <span className="text-2xl animate-wave">👋</span>
-                <span>{t.heroIntro}</span>
-              </div>
-              
-              <h1 className="text-6xl lg:text-8xl font-black text-gray-900 leading-none">
+              <h1 className="text-4xl lg:text-6xl font-black text-gray-900 leading-none">
                 {t.heroTitle1}
-                <br />
-                {t.heroTitle2}
               </h1>
-              
-              <h2 className="text-4xl lg:text-6xl font-light text-gray-500 leading-none">
-                {t.heroSubtitle}
-              </h2>
-              
-              <p className="text-lg text-gray-600 max-w-md">
+              <p className="text-2xl text-gray-600 max-w-md font-medium">
                 {t.heroLocation}
               </p>
-              
-              <div className="flex flex-wrap gap-4 pt-6">
-                <button
-                  onClick={() => scrollToSection('projects')}
-                  className="bg-gray-900 text-white px-8 py-4 rounded-md hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                >
-                  {t.heroBtnDev}
-                </button>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-md hover:bg-gray-900 hover:text-white transition-all duration-300"
-                >
-                  {t.heroBtnDesign}
-                </button>
-              </div>
+              <p className="text-lg text-black-600 max-w-2xl font-medium " style={{fontWeight:500}}>
+                Currently working as CTO for the platform <a href="https://play.google.com/store/apps/details?id=com.seedsoftengine.papers" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-black font-semibold decoration-none">Papers </a>taking big part in technical decisions. 
+              </p>
+              <p className="text-lg text-black-600 max-w-2xl font-medium">
+                {t.aboutP1}
+              </p>
+              <p className="text-lg text-black-600 max-w-2xl font-medium flex gap-8">
+                <a href="https://www.facebook.com/christian.mba.16568" target="_blank" rel="noopener noreferrer">
+                  <Facebook size={48} color="#000" variant="Bold" className="cursor-pointer transition-transform duration-300 hover:scale-110" />
+                </a>
+
+                <a href="https://github.com/chrimika" target="_blank" rel="noopener noreferrer">
+                  <Github size={48} color="#000" className="cursor-pointer transition-transform duration-300 hover:scale-110" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/mika-mba-691549231/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin size={48} color="#000" className="cursor-pointer transition-transform duration-300 hover:scale-110" />
+                </a>
+              </p>
             </div>
 
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-80">
               <div 
                 className="relative"
                 style={{
                   transform: `translateY(${scrollY * 0.05}px)`
                 }}
               >
-                <div className="w-60 h-60 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl mx-auto">
-                  <img
-                    src="/assets/images/Mika.jpg"
-                    alt="Mika MBA"
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                  <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl font-bold hidden">
-                    M
-                  </div>
-                </div>
+              <div className="relative w-60 h-60 sm:w-80 sm:h-80 rounded-2 border-3 border-black shadow-2xl mx-auto p-2">
+                <img
+                  src="/assets/images/Mika.jpg"
+                  alt="Mika MBA"
+                  className="absolute w-full h-full object-cover transition-transform duration-100 -left-4 -top-4 z-10"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+              </div>
+
               </div>
             </div>
           </div>
@@ -321,49 +307,10 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white w-full">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
-                {t.aboutTitle}
-              </h2>
-              <div className="space-y-6 text-lg text-gray-600">
-                <p>
-                  {t.aboutP1}
-                </p>
-                <p>
-                  {t.aboutP2}
-                </p>
-                <p>
-                  {t.aboutP3}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 w-full">
-              {t.aboutSkills.map((item, index) => (
-                <div 
-                  key={index}
-                  className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow w-full min-w-0"
-                >
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <item.icon className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-50 w-full">
+      <section id="projects" className="py-20 bg-white w-full">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
@@ -374,7 +321,7 @@ const Portfolio: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div
                 key={project.id}
@@ -439,6 +386,48 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-white bg-gray-50 w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
+                {t.aboutTitle}
+              </h2>
+              <div className="space-y-6 text-lg text-gray-600">
+                <p>
+                  {t.aboutP1}
+                </p>
+                <p>
+                  {t.aboutP2}
+                </p>
+                <p>
+                  {t.aboutP3}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 w-full">
+              {t.aboutSkills.map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow w-full min-w-0"
+                >
+                  <div className="bg-blue-100 p-3 rounded-lg">
+                    <item.icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 w-full">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center w-full">
@@ -486,7 +475,7 @@ const Portfolio: React.FC = () => {
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4m-8 8h8" />
         </svg>
-        Télécharger mon   CV
+        Download my CV
       </a>
 
       <style jsx>{`
