@@ -198,7 +198,7 @@ const Portfolio: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 w-full">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-black text-gray-900">
-              <img src="assets/images/mika-logo-black.svg" alt="Logo" className="w-12 h-12" />
+              <img src="assets/images/mika-logo-black.svg" alt="Logo" className="w-20 h-20" />
             </div>
             
             <nav className="flex items-center space-x-8">
@@ -240,9 +240,9 @@ const Portfolio: React.FC = () => {
       {/* Hero Section */}
       <section id="home" className="pt-24 pb-16 min-h-screen flex justify-center items-center w-full">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full pb-16">
-          <div className="flex justify-between flex-wrap-reverse gap-16">
+          <div className="flex justify-between flex-wrap gap-16">
             <div 
-              className="space-y-6 w-150"
+              className="space-y-8 w-150 mt-8"
               style={{
                 transform: `translateY(${scrollY * 0.1}px)`,
                 opacity: Math.max(0, 1 - scrollY * 0.002)
@@ -275,7 +275,7 @@ const Portfolio: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex justify-center w-100 m-auto">
+            <div className="flex justify-center w-100 m-auto mt-8">
               <div 
                 className="relative"
                 style={{
@@ -325,7 +325,7 @@ const Portfolio: React.FC = () => {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 style={{
                   animationDelay: `${index * 0.2}s`
                 }}
