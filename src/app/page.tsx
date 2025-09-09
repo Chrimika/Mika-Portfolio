@@ -258,7 +258,7 @@ const Portfolio: React.FC = () => {
                 Currently working as CTO for the platform <a href="https://play.google.com/store/apps/details?id=com.seedsoftengine.papers" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-black font-semibold decoration-none">Papers </a>taking big part in technical decisions. 
               </p>
               <p className="text-lg text-black-600 max-w-2xl font-medium">
-                {t.aboutP1}
+                I design and build intuitive, mobile-first experiences that combine strong technical execution with clean, user-focused UI/UX, helping ideas evolve into impactful digital products.
               </p>
               <p className="text-lg text-black-600 max-w-2xl font-medium flex gap-8">
                 <a href="https://www.facebook.com/christian.mba.16568" target="_blank" rel="noopener noreferrer">
