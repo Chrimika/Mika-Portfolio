@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Reçu MAILODIE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #4F46E5;
+            padding-bottom: 10px;
+        }
+        .info {
+            background: #EEF2FF;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #4F46E5;
+        }
+        .button {
+            display: inline-block;
+            background: #4F46E5;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px 10px 10px 0;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #4338CA;
+        }
+        .button.secondary {
+            background: #10B981;
+        }
+        .button.secondary:hover {
+            background: #059669;
+        }
+        code {
+            background: #F3F4F6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .note {
+            background: #FEF3C7;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #F59E0B;
+            margin: 20px 0;
+        }
+        ul {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧾 Test du Reçu de Paiement MAILODIE</h1>
+        
+        <div class="info">
+            <strong>✅ Modifications appliquées :</strong>
+            <ul>
+                <li>Badge "Nouvelle solution digitale" retiré</li>
+                <li>Système de reçu après paiement implémenté</li>
+            </ul>
+        </div>
+
+        <h2>🧪 Tester le reçu maintenant</h2>
+        
+        <p>Cliquez sur un des liens ci-dessous pour voir le reçu en action :</p>
+
+        <a href="http://localhost:3001/mailodie-join?status=complete&reference=mailodie_test_abc123&trxref=trx.XYZ789&pack=MAILODIE%20PREMIUM&amount=96000&name=Jean%20Dupont&email=jean.dupont@example.com" 
+           class="button" 
+           target="_blank">
+            📄 Test PREMIUM (96,000 F)
+        </a>
+
+        <a href="http://localhost:3001/mailodie-join?status=complete&reference=mailodie_test_def456&trxref=trx.ABC456&pack=MAILODIE%20ESSENTIEL&amount=40000&name=Marie%20Martin&email=marie.martin@example.com" 
+           class="button secondary" 
+           target="_blank">
+            📄 Test ESSENTIEL (40,000 F)
+        </a>
+
+        <a href="http://localhost:3001/mailodie-join?status=complete&reference=mailodie_test_ghi789&trxref=trx.DEF123&pack=MAILODIE%20ELITE&amount=200000&name=Paul%20Bernard&email=paul.bernard@example.com" 
+           class="button" 
+           style="background: #8B5CF6;"
+           target="_blank">
+            📄 Test ELITE (200,000 F)
+        </a>
+
+        <div class="note">
+            <strong>⚠️ Note :</strong> Assurez-vous que le serveur de développement est en cours d'exécution :
+            <br><code>npm run dev</code>
+        </div>
+
+        <h2>📋 Ce qui est testé</h2>
+        <ul>
+            <li><strong>Affichage automatique</strong> du reçu au retour de paiement</li>
+            <li><strong>Informations complètes</strong> : référence, montant, pack, client</li>
+            <li><strong>Design professionnel</strong> avec badge "PAYÉ"</li>
+            <li><strong>Prochaines étapes</strong> clairement indiquées</li>
+            <li><strong>Bouton d'impression</strong> pour garder une copie</li>
+            <li><strong>Lien WhatsApp</strong> pour rejoindre le groupe</li>
+        </ul>
+
+        <h2>🎨 Aperçu du reçu</h2>
+        <p>Le reçu inclut :</p>
+        <ul>
+            <li>✅ Icône de succès verte</li>
+            <li>📅 Date et heure du paiement</li>
+            <li>🔢 Référence unique de transaction</li>
+            <li>📦 Pack souscrit (ESSENTIEL/PREMIUM/ELITE)</li>
+            <li>👤 Nom et email du client</li>
+            <li>💰 Montant payé en gros caractères</li>
+            <li>⚡ Liste des prochaines étapes</li>
+            <li>📞 Informations de contact</li>
+            <li>🖨️ Bouton pour imprimer</li>
+        </ul>
+
+        <h2>🔄 Flux complet</h2>
+        <ol>
+            <li>Client sélectionne un pack → Modal s'ouvre</li>
+            <li>Remplit le formulaire → Validation des données</li>
+            <li>Clique sur "Payer" → Redirection NotchPay</li>
+            <li>Effectue le paiement sur NotchPay</li>
+            <li>NotchPay redirige vers /mailodie-join avec paramètres</li>
+            <li><strong>Reçu s'affiche automatiquement ✅</strong></li>
+        </ol>
+
+        <div class="info">
+            <strong>💡 Astuce :</strong> 
+            <br>Pour tester différents scénarios, modifiez les paramètres dans l'URL :
+            <ul>
+                <li><code>pack</code> : MAILODIE ESSENTIEL / PREMIUM / ELITE</li>
+                <li><code>amount</code> : 40000 / 96000 / 200000</li>
+                <li><code>name</code> : Nom du client</li>
+                <li><code>email</code> : Email du client</li>
+            </ul>
+        </div>
+
+        <h2>📞 Support</h2>
+        <p>
+            Email: <a href="mailto:contact@mikamba.cm">contact@mikamba.cm</a><br>
+            Téléphone: <a href="tel:+237672094167">+237672094167</a><br>
+            WhatsApp: <a href="https://chat.whatsapp.com/GLrvgnNePXe3tZG9kIWGYk" target="_blank">Rejoindre le groupe</a>
+        </p>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #E5E7EB; text-align: center; color: #6B7280;">
+            <p>✨ MAILODIE - Votre crédibilité digitale en quelques clics</p>
+        </div>
+    </div>
+</body>
+</html>
