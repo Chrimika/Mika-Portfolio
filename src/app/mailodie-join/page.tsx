@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { CheckCircle, Zap, Target, Clock, MessageCircle, Sparkles } from "lucide-react";
 import jsPDF from "jspdf";
+import { getPromoEndDate } from "./promo-config";
 
 type PricingPack = {
   id: string;
@@ -63,10 +64,10 @@ export default function MailodieJoin() {
     return Math.round(originalPrice * 0.8);
   };
 
-  // Countdown timer for 96 hours
+  // Countdown timer for 96 hours - FIXED START DATE
   useEffect(() => {
-    const endDate = new Date();
-    endDate.setHours(endDate.getHours() + 96);
+    // Utilise la date de fin configurée
+    const endDate = getPromoEndDate();
     
     const tick = () => {
       const now = new Date();
