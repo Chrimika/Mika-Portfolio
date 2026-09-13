@@ -1,0 +1,15 @@
+# robots.txt for mikamba.cm
+
+User-agent: *
+Allow: /
+Allow: /mailodie-join
+
+# Disallow admin or private paths (if any)
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://mikamba.cm/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
