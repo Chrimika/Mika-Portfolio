@@ -13,7 +13,7 @@
     "iconsax-react": "^0.0.8",
     "jspdf": "^4.2.1",
     "lucide-react": "^0.522.0",
-    "next": "15.3.4",
+    "next": "15.3.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
