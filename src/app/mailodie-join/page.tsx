@@ -53,6 +53,7 @@ export default function MailodieJoin() {
   const [modalOpen, setModalOpen] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [countryCode, setCountryCode] = useState("+226");
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [payLoading, setPayLoading] = useState(false);
@@ -332,6 +333,10 @@ export default function MailodieJoin() {
     const reference = "mailodie_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8);
     const currentPrice = getDiscountedPrice(pack.originalPrice);
 
+    // Format du numéro pour NotchPay (enlever espaces et tirets)
+    const cleanPhone = phone.replace(/[\s\-()]/g, '');
+    const fullPhoneNumber = countryCode + cleanPhone;
+
     try {
       const resp = await fetch("https://api.notchpay.co/payments/initialize", {
         method: "POST",
@@ -341,7 +346,7 @@ export default function MailodieJoin() {
         },
         body: JSON.stringify({
           email,
-          phone,
+          phone: fullPhoneNumber,
           amount: Number(currentPrice),
           currency: "XAF",
           description: `Mailodie ${pack.name} - ${company || fullName}`,
@@ -349,7 +354,7 @@ export default function MailodieJoin() {
           callback: window.location.origin + "/mailodie-join",
           metadata: { 
             name: fullName,
-            phone,
+            phone: fullPhoneNumber,
             company: company || "N/A",
             pack: pack.name,
           },
@@ -669,14 +674,30 @@ export default function MailodieJoin() {
                         <label className="block text-gray-700 text-sm font-semibold mb-2">
                           Téléphone *
                         </label>
-                        <input
-                          type="tel"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          className="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none transition"
-                          placeholder="+237 6XX XXX XXX"
-                          required
-                        />
+                        <div className="flex gap-2">
+                          <select
+                            value={countryCode}
+                            onChange={(e) => setCountryCode(e.target.value)}
+                            className="w-32 border-2 border-gray-300 rounded-xl px-3 py-3 text-gray-900 focus:border-blue-500 focus:outline-none transition"
+                          >
+                            <option value="+226">🇧🇫 +226</option>
+                            <option value="+237">🇨🇲 +237</option>
+                            <option value="+225">🇨🇮 +225</option>
+                            <option value="+221">🇸🇳 +221</option>
+                            <option value="+223">🇲🇱 +223</option>
+                            <option value="+229">🇧🇯 +229</option>
+                            <option value="+228">🇹🇬 +228</option>
+                            <option value="+227">🇳🇪 +227</option>
+                          </select>
+                          <input
+                            type="tel"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            className="flex-1 border-2 border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none transition"
+                            placeholder="XX XX XX XX"
+                            required
+                          />
+                        </div>
                       </div>
 
                       <div>

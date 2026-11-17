@@ -6,6 +6,7 @@ import { Check } from "lucide-react";
 export default function ClaudePage() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [countryCode, setCountryCode] = useState("+226");
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
   const [payLoading, setPayLoading] = useState(false);
@@ -48,6 +49,10 @@ export default function ClaudePage() {
     setPayLoading(true);
     const reference = "claude_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8);
 
+    // Format du numéro pour NotchPay (enlever espaces et tirets)
+    const cleanPhone = phone.replace(/[\s\-()]/g, '');
+    const fullPhoneNumber = countryCode + cleanPhone;
+
     try {
       const resp = await fetch("https://api.notchpay.co/payments/initialize", {
         method: "POST",
@@ -57,7 +62,7 @@ export default function ClaudePage() {
         },
         body: JSON.stringify({
           email,
-          phone,
+          phone: fullPhoneNumber,
           amount: Number(PRICE),
           currency: "XAF",
           description: `Claude AI Team - 1 mois - ${fullName}`,
@@ -65,7 +70,7 @@ export default function ClaudePage() {
           callback: window.location.origin + "/claude?success=true",
           metadata: { 
             name: fullName,
-            phone,
+            phone: fullPhoneNumber,
             country,
             service: "Claude AI Team - 1 mois",
           },
@@ -200,14 +205,30 @@ export default function ClaudePage() {
               <label className="block text-sm font-medium text-[#1E1611] mb-2">
                 Téléphone
               </label>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 bg-[#FAF7F5] border border-[#E6DED7] rounded-lg focus:border-[#CC9B7A] focus:outline-none focus:ring-2 focus:ring-[#CC9B7A]/20 transition text-[#1E1611] placeholder-[#A89A8F]"
-                placeholder="+226 XX XX XX XX"
-                required
-              />
+              <div className="flex gap-2">
+                <select
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  className="w-32 px-3 py-3 bg-[#FAF7F5] border border-[#E6DED7] rounded-lg focus:border-[#CC9B7A] focus:outline-none focus:ring-2 focus:ring-[#CC9B7A]/20 transition text-[#1E1611]"
+                >
+                  <option value="+226">🇧🇫 +226</option>
+                  <option value="+237">🇨🇲 +237</option>
+                  <option value="+225">🇨🇮 +225</option>
+                  <option value="+221">🇸🇳 +221</option>
+                  <option value="+223">🇲🇱 +223</option>
+                  <option value="+229">🇧🇯 +229</option>
+                  <option value="+228">🇹🇬 +228</option>
+                  <option value="+227">🇳🇪 +227</option>
+                </select>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="flex-1 px-4 py-3 bg-[#FAF7F5] border border-[#E6DED7] rounded-lg focus:border-[#CC9B7A] focus:outline-none focus:ring-2 focus:ring-[#CC9B7A]/20 transition text-[#1E1611] placeholder-[#A89A8F]"
+                  placeholder="XX XX XX XX"
+                  required
+                />
+              </div>
             </div>
 
             <div>
