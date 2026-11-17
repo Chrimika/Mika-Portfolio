@@ -341,6 +341,7 @@ export default function MailodieJoin() {
         },
         body: JSON.stringify({
           email,
+          phone,
           amount: Number(currentPrice),
           currency: "XAF",
           description: `Mailodie ${pack.name} - ${company || fullName}`,

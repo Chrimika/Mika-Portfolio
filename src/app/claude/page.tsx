@@ -57,6 +57,7 @@ export default function ClaudePage() {
         },
         body: JSON.stringify({
           email,
+          phone,
           amount: Number(PRICE),
           currency: "XAF",
           description: `Claude AI Team - 1 mois - ${fullName}`,
