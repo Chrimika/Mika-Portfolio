@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Zap, Shield, Clock } from "lucide-react";
+import { Check } from "lucide-react";
 
 export default function ClaudePage() {
   const [fullName, setFullName] = useState("");
@@ -88,130 +88,135 @@ export default function ClaudePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-400 to-purple-600 rounded-2xl mb-6 shadow-xl">
-            <svg className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+    <div className="min-h-screen bg-[#FAF7F5] flex items-center justify-center p-4">
+      <div className="max-w-xl w-full">
+        {/* Header with Claude Logo */}
+        <div className="text-center mb-10">
+          {/* Claude Logo SVG */}
+          <div className="flex justify-center mb-6">
+            <svg width="120" height="120" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" rx="40" fill="#CC9B7A"/>
+              <path d="M100 40C77.9086 40 60 57.9086 60 80C60 91.0457 64.7411 101.046 72.2183 108L72 140C72 145.523 76.4772 150 82 150H118C123.523 150 128 145.523 128 140L127.782 108C135.259 101.046 140 91.0457 140 80C140 57.9086 122.091 40 100 40Z" fill="#FAF7F5"/>
+              <circle cx="88" cy="75" r="6" fill="#CC9B7A"/>
+              <circle cx="112" cy="75" r="6" fill="#CC9B7A"/>
+              <path d="M88 95C88 95 94 102 100 102C106 102 112 95 112 95" stroke="#CC9B7A" strokeWidth="4" strokeLinecap="round"/>
             </svg>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1E1611] mb-3">
             Claude AI Team
           </h1>
-          <p className="text-xl text-gray-600 mb-2">
+          <p className="text-lg text-[#6B5D54] mb-6">
             Accès complet pendant 1 mois
           </p>
           <div className="inline-block">
-            <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-purple-600">
-              21,350 FCFA
+            <span className="text-5xl font-bold text-[#CC9B7A]">
+              21,350
             </span>
-            <span className="text-gray-500 text-lg ml-2">/mois</span>
+            <span className="text-[#6B5D54] text-xl ml-2">FCFA</span>
           </div>
         </div>
 
         {/* Features */}
-        <div className="bg-white rounded-3xl shadow-2xl p-8 mb-6 border border-gray-100">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Ce qui est inclus</h2>
-          <div className="space-y-4">
+        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6 border border-[#E6DED7]">
+          <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                <Check className="w-5 h-5 text-green-600" />
+              <div className="flex-shrink-0 w-6 h-6 bg-[#CC9B7A] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-4 h-4 text-white" strokeWidth={3} />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Claude Sonnet 4.5</h3>
-                <p className="text-gray-600 text-sm">Le modèle le plus puissant d'Anthropic</p>
+                <h3 className="font-semibold text-[#1E1611]">Claude Sonnet 4.5</h3>
+                <p className="text-[#6B5D54] text-sm">Le modèle le plus puissant d'Anthropic</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <Zap className="w-5 h-5 text-blue-600" />
+              <div className="flex-shrink-0 w-6 h-6 bg-[#CC9B7A] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-4 h-4 text-white" strokeWidth={3} />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Usage illimité</h3>
-                <p className="text-gray-600 text-sm">Utilisez Claude autant que vous voulez</p>
+                <h3 className="font-semibold text-[#1E1611]">Usage illimité</h3>
+                <p className="text-[#6B5D54] text-sm">Aucune limite de messages</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                <Shield className="w-5 h-5 text-purple-600" />
+              <div className="flex-shrink-0 w-6 h-6 bg-[#CC9B7A] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-4 h-4 text-white" strokeWidth={3} />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Accès Team</h3>
-                <p className="text-gray-600 text-sm">Fonctionnalités professionnelles complètes</p>
+                <h3 className="font-semibold text-[#1E1611]">Fonctionnalités Team</h3>
+                <p className="text-[#6B5D54] text-sm">Accès professionnel complet</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                <Clock className="w-5 h-5 text-orange-600" />
+              <div className="flex-shrink-0 w-6 h-6 bg-[#CC9B7A] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-4 h-4 text-white" strokeWidth={3} />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Activation immédiate</h3>
-                <p className="text-gray-600 text-sm">Accès dans les 24h après paiement</p>
+                <h3 className="font-semibold text-[#1E1611]">Activation rapide</h3>
+                <p className="text-[#6B5D54] text-sm">Accès sous 24h après paiement</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Payment Form */}
-        <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Souscrire maintenant</h2>
+        <div className="bg-white rounded-2xl shadow-lg p-8 border border-[#E6DED7]">
+          <h2 className="text-2xl font-bold text-[#1E1611] mb-6 text-center">Informations de souscription</h2>
           
-          <form onSubmit={handlePay} className="space-y-4">
+          <form onSubmit={handlePay} className="space-y-5">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Nom complet *
+              <label className="block text-sm font-medium text-[#1E1611] mb-2">
+                Nom complet
               </label>
               <input
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition"
+                className="w-full px-4 py-3 bg-[#FAF7F5] border border-[#E6DED7] rounded-lg focus:border-[#CC9B7A] focus:outline-none focus:ring-2 focus:ring-[#CC9B7A]/20 transition text-[#1E1611] placeholder-[#A89A8F]"
                 placeholder="Jean Dupont"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Email *
+              <label className="block text-sm font-medium text-[#1E1611] mb-2">
+                Adresse e-mail
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition"
+                className="w-full px-4 py-3 bg-[#FAF7F5] border border-[#E6DED7] rounded-lg focus:border-[#CC9B7A] focus:outline-none focus:ring-2 focus:ring-[#CC9B7A]/20 transition text-[#1E1611] placeholder-[#A89A8F]"
                 placeholder="vous@exemple.com"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Téléphone (avec indicatif pays) *
+              <label className="block text-sm font-medium text-[#1E1611] mb-2">
+                Téléphone
               </label>
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition"
-                placeholder="+226 XX XX XX XX (Burkina) ou +237 6XX XXX XXX (Cameroun)"
+                className="w-full px-4 py-3 bg-[#FAF7F5] border border-[#E6DED7] rounded-lg focus:border-[#CC9B7A] focus:outline-none focus:ring-2 focus:ring-[#CC9B7A]/20 transition text-[#1E1611] placeholder-[#A89A8F]"
+                placeholder="+226 XX XX XX XX"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Pays *
+              <label className="block text-sm font-medium text-[#1E1611] mb-2">
+                Pays
               </label>
               <select
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition"
+                className="w-full px-4 py-3 bg-[#FAF7F5] border border-[#E6DED7] rounded-lg focus:border-[#CC9B7A] focus:outline-none focus:ring-2 focus:ring-[#CC9B7A]/20 transition text-[#1E1611]"
                 required
               >
                 <option value="">Sélectionnez votre pays</option>
@@ -223,37 +228,37 @@ export default function ClaudePage() {
                 <option value="Bénin">🇧🇯 Bénin</option>
                 <option value="Togo">🇹🇬 Togo</option>
                 <option value="Niger">🇳🇪 Niger</option>
-                <option value="Autre">🌍 Autre pays</option>
+                <option value="Autre">🌍 Autre</option>
               </select>
             </div>
 
-            <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 text-sm text-blue-800">
-              <p className="font-semibold mb-1">💳 Modes de paiement acceptés :</p>
-              <p>Mobile Money (Orange, MTN, Moov) • Carte bancaire</p>
-              <p className="mt-2 text-xs text-blue-600">
-                🇧🇫 Clients du Burkina Faso : Orange Money et Moov Money acceptés !
+            <div className="bg-[#FFF8F2] border border-[#E6DED7] rounded-lg p-4 text-sm text-[#6B5D54]">
+              <p className="font-semibold text-[#1E1611] mb-1">💳 Paiement Mobile Money accepté</p>
+              <p className="text-xs">Orange Money • MTN • Moov Money • Carte bancaire</p>
+              <p className="mt-2 text-xs text-[#CC9B7A] font-medium">
+                🇧🇫 Burkina Faso : tous les opérateurs supportés
               </p>
             </div>
 
             <button
               type="submit"
               disabled={payLoading}
-              className="w-full bg-gradient-to-r from-orange-500 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
+              className="w-full bg-[#CC9B7A] hover:bg-[#B88A6A] text-white py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {payLoading ? "Traitement..." : `Payer 21,350 FCFA`}
+              {payLoading ? "Traitement en cours..." : "Payer 21,350 FCFA"}
             </button>
           </form>
 
-          <p className="text-center text-xs text-gray-500 mt-6">
-            Paiement sécurisé par NotchPay • Vos données sont protégées
+          <p className="text-center text-xs text-[#A89A8F] mt-5">
+            Paiement sécurisé via NotchPay
           </p>
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-8 text-sm text-gray-600">
-          <p>Besoin d'aide ? Contactez-nous</p>
-          <p className="font-semibold text-gray-900 mt-1">
-            📧 contact@mikamba.cm • 📱 +237 672 094 167
+        <div className="text-center mt-8 text-sm text-[#6B5D54]">
+          <p>Besoin d'assistance ?</p>
+          <p className="font-medium text-[#1E1611] mt-1">
+            📧 contact@mikamba.cm
           </p>
         </div>
       </div>
